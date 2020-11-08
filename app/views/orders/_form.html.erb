@@ -1,0 +1,15 @@
+<table class="table table-secondary table-striped shadow-sm p-3 mb-5">
+  <tr class="form-group">
+    <th>Customer ID :</th>
+    <% customers_array = Customer.all.map { |customer| [customer.id] } %>
+    <td><%= f.select :customer_id, options_for_select(customers_array), class: 'form-control form-control-lg' %></td>
+  </tr>
+  <tr class="form-group">
+    <th>Total Bill :</th>
+    <td><%= f.text_field(:total_bill, class: "form-control input-sm") %></td>
+  </tr>
+  <tr class="form-group">
+    <th>Items : </th>
+    <td><%= f.text_area(:item_names, class: "form-control input-sm") %></td>
+  </tr>
+</table>

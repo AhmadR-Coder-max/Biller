@@ -1,2 +1,9 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<h2 style="margin: 25px; text-align: center;"> New Item </h2>
+
+<%= form_for(:item, url: {:action => 'create'}) do |f| %>
+
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <%= submit_tag("Create Item", class: "btn btn-block btn-secondary btn-lg mt-5") %>
+
+<% end %>

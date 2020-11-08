@@ -1,2 +1,9 @@
-<h1>Customers#new</h1>
-<p>Find me in app/views/customers/new.html.erb</p>
+<h2 style="margin: 25px; text-align: center;"> Add a New Customer </h2>
+
+<%= form_for(:customer, url: {:action => 'create'}) do |f| %>
+
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <%= submit_tag("Add Customer", class: "btn btn-block btn-secondary btn-lg mt-5") %>
+
+<% end %>

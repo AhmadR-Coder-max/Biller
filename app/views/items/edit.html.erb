@@ -1,2 +1,9 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<h2 style="margin: 25px; text-align: center;"> Edit an Item </h2>
+
+<%= form_for(:item, url: {:action => 'update', id: @item.id}) do |f| %>
+
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <%= submit_tag("Update Item", class: "btn btn-block btn-secondary btn-lg mt-5") %>
+
+<% end %>

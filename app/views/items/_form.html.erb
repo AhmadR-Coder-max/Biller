@@ -1,0 +1,27 @@
+<table class="table table-secondary table-striped shadow-sm p-3 mb-5">
+  <tr class="form-group">
+    <th>Order ID :</th>
+    <% orders_array = Order.all.map { |order| [order.id] } %>
+    <td><%= f.select :order_id, options_for_select(orders_array), class: 'form-control form-control-lg' %></td>
+  </tr>
+  <tr class="form-group">
+    <th>Name :</th>
+    <td><%= f.text_field(:name, class: "form-control input-sm") %></td>
+  </tr>
+  <tr class="form-group">
+    <th>Description :</th>
+    <td><%= f.text_area(:description, class: "form-control input-sm") %></td>
+  </tr>
+  <tr class="form-group">
+    <th>Price :</th>
+    <td><%= f.number_field(:price, class: "form-control input-sm") %></td>
+  </tr>
+  <tr class="form-group">
+    <th>Quantity :</th>
+    <td><%= f.number_field(:quantity, class: "form-control input-sm") %></td>
+  </tr>
+  <tr class="form-group">
+    <th>Size: </th>
+    <td><%= f.number_field(:size, class: "form-control input-sm", placeholder: 'Enter measurement in cm') %></td>
+  </tr>
+</table>

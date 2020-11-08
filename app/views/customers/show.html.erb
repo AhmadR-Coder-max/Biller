@@ -1,2 +1,32 @@
-<h1>Customers#show</h1>
-<p>Find me in app/views/customers/show.html.erb</p>
+<% @page_title = "#{@customer.name} \u{1f60e}" %>
+<h2 style="margin: 35px; text-align: center;"> See <%= @customer.name %>'s info </h2>
+
+<table class="table table-secondary table-striped container shadow-sm p-3 mb-5">
+  <thead class="thead-dark">
+  <tr>
+    <th> User ID </th>
+    <th> Name </th>
+    <th> Address 1 </th>
+    <th> Address 2 </th>
+    <th> Phone 1 </th>
+    <th> Phone 2 </th>
+    <th colspan="2"> Actions </th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <%= @customer.user_id %> </td>
+      <td> <%= @customer.name %> </td>
+      <td> <%= @customer.address_1 %> </td>
+      <td> <%= @customer.address_2 %> </td>
+      <td> <%= @customer.phone_1 %> </td>
+      <td> <%= @customer.phone_2 %> </td>
+      <td id="links">
+        <%= link_to('Edit', {action: :edit, id: @customer.id}, class: 'btn btn-outline-primary btn-sm') %>
+        <%= link_to('Destroy', {action: :destroy, id: @customer.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary btn-sm') %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to("Go Back", {action: :index}, class: 'btn btn-secondary btn-block container') %>

@@ -1,2 +1,39 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<% @page_title = "Items \u{1f60e}" %>
+
+<h2 style="margin: 25px; text-align: center;"> Items </h2>
+
+<table class="table table-secondary table-striped container shadow-sm p-3 mb-5">
+  <thead class="thead-dark">
+  <tr>
+    <th> ID </th>
+    <th> Order ID </th>
+    <th> Name </th>
+    <th> Description </th>
+    <th> Price </th>
+    <th> Quantity </th>
+    <th> Size </th>
+    <th> Total </th>
+    <th colspan="3"> Actions </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @items.each do |item| %>
+    <tr>
+      <td> <%= item.id %> </td>
+      <td> <%= link_to(item.order.id, {controller: :orders, action: :show, id: item.order.id}) %> </td>
+      <td> <%= item.name %> </td>
+      <td> <%= item.description %> </td>
+      <td> <%= item.price %> </td>
+      <td> <%= item.quantity %> </td>
+      <td> <%= item.size %> </td>
+      <td> <%= item.total %> </td>
+      <td id="links">
+        <%= link_to('Show', {action: :show, id: item.id}, class: 'btn btn-outline-primary btn-sm') %>
+        <%= link_to('Edit', {action: :edit, id: item.id}, class: 'btn btn-outline-primary btn-sm') %>
+        <%= link_to('Destroy', {action: :destroy, id: item.id}, method: :destroy, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary btn-sm') %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to("New Customer", {action: :new}, class: "btn btn-secondary btn-lg btn-block mt-5 container") %>

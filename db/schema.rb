@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_11_07_084638) do
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.decimal "total_bill"
-    t.text "items"
+    t.text "item_names"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"
