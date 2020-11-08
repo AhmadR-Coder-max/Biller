@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
   def destroy
     order = Order.find(params[:id]).destroy
     redirect_to action: :index
-    flash[:notice] = "Order #{order.name} destroyed successfully."
+    flash[:notice] = "Order destroyed successfully."
   end
 
   private

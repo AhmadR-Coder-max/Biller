@@ -27,7 +27,7 @@
     <td> <%= @item.total %> </td>
     <td id="links">
       <%= link_to('Edit', {action: :edit, id: @item.id}, class: 'btn btn-outline-primary btn-sm') %>
-      <%= link_to('Destroy', {action: :destroy, id: @item.id}, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary btn-sm') %>
+      <%= link_to('Destroy', {action: :destroy, id: @item.id}, method: :destroy, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary btn-sm') %>
     </td>
   </tr>
   </tbody>

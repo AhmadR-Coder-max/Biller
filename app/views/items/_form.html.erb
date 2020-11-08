@@ -10,7 +10,7 @@
   </tr>
   <tr class="form-group">
     <th>Description :</th>
-    <td><%= f.text_area(:description, class: "form-control input-sm") %></td>
+    <td><%= f.text_area(:description, row: 2, column: 2, class: "form-control input-sm") %></td>
   </tr>
   <tr class="form-group">
     <th>Price :</th>
@@ -23,5 +23,9 @@
   <tr class="form-group">
     <th>Size: </th>
     <td><%= f.number_field(:size, class: "form-control input-sm", placeholder: 'Enter measurement in cm') %></td>
+  </tr>
+  <tr class="form-group">
+    <th>Total: </th>
+    <td><%= f.number_field(:total, class: "form-control input-sm", placeholder: 'Calculated automatically') %></td>
   </tr>
 </table>

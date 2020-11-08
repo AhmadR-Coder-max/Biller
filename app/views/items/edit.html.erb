@@ -1,9 +1,10 @@
+<% @page_title = "Edit \u{1f60e}" %>
+
 <h2 style="margin: 25px; text-align: center;"> Edit an Item </h2>
 
 <%= form_for(:item, url: {:action => 'update', id: @item.id}) do |f| %>
 
   <%= render(:partial => "form", :locals => {:f => f}) %>
 
-  <%= submit_tag("Update Item", class: "btn btn-block btn-secondary btn-lg mt-5") %>
-
+  <%= submit_tag("Update Item", class: "btn btn-block btn-secondary btn-lg mb-5") %>
 <% end %>

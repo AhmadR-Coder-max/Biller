@@ -1,9 +1,11 @@
+<% @page_title = "New \u{1f60e}" %>
+
 <h2 style="margin: 25px; text-align: center;"> New Item </h2>
 
 <%= form_for(:item, url: {:action => 'create'}) do |f| %>
 
   <%= render(:partial => "form", :locals => {:f => f}) %>
 
-  <%= submit_tag("Create Item", class: "btn btn-block btn-secondary btn-lg mt-5") %>
+  <%= submit_tag("Create Item", class: "btn btn-block btn-secondary btn-lg mt-5 mb-5") %>
 
 <% end %>
